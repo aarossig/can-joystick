@@ -1,0 +1,4 @@
+[submodule "libusbcan"]
+	path = libusbcan
+	url = https://github.com/b/libusbcan
+	branch = master

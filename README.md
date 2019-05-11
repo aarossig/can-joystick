@@ -16,3 +16,27 @@ project are your responsibility.
 ## Hardware
 
 This code uses the ViewTool Ginkgo USB-CAN bridge and complimenting libusbcan.
+
+## Building
+
+This project uses git submodules. Be sure to initialize them first:
+
+    git submodule init
+    git submodule update
+
+Alternatively, you can clone with ``--recurse-submodules`` to achieve the same.
+
+Once the project has been setup, the build is as simple as invoking:
+
+    make
+
+## Running
+
+Once the project has compiled successfully, use the following to run the
+tool. The ``LD_LIBRARY_PATH`` must be supplied to allow the application
+to find the shared object for communicating with the ViewTool device.
+
+In addition, ``sudo`` is used to allow hardware access. This could probably
+be avoided with udev rules.
+
+    sudo LD_LIBRARY_PATH=libusbcan/lib/linux_64bit ./canjoystick
